@@ -1,5 +1,4 @@
 import React, { FC, memo } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { IconButton } from '@material-ui/core';
 import { Bookmark } from '@material-ui/icons';
@@ -11,6 +10,7 @@ import { openDialog } from '../../../store/dialog/actions';
 import { useHistory } from 'react-router';
 import PopupMenuList, { PopupMenuItemProps } from '../../PopupMenuList';
 import { Restaurant } from '../../../store/restaurants/types';
+import { useAppDispatch } from '../../../store/hooks';
 
 interface AddToFavoriteBtnProps {
   restaurant: Restaurant;
@@ -19,7 +19,7 @@ interface AddToFavoriteBtnProps {
 }
 const AddToFavoriteBtn: FC<AddToFavoriteBtnProps> = ({ restaurant, favorites, user }) => {
   const history = useHistory();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   // * If not login
   if (user === null) return <div />;

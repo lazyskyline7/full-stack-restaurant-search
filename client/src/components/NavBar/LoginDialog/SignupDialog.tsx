@@ -6,11 +6,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { DialogTitle } from '@material-ui/core';
 import axios from 'axios';
-import { useDispatch } from 'react-redux';
 import { showMessage } from '../../../store/message/actions';
+import { useAppDispatch } from '../../../store/hooks';
 
 const SignupDialog: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [open, setOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');

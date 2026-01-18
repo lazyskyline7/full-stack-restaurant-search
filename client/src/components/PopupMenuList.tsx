@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react';
+import React, { useState, FC, PropsWithChildren } from 'react';
 import {
   Popper,
   MenuItem,
@@ -19,7 +19,7 @@ interface PopupMenuListProps {
   title: string;
   menuItems: PopupMenuItemProps[];
 }
-const PopupMenuList: FC<PopupMenuListProps> = ({ children, title, menuItems }) => {
+const PopupMenuList: FC<PropsWithChildren<PopupMenuListProps>> = ({ children, title, menuItems }) => {
   const anchorRef = React.useRef<HTMLButtonElement>(null);
   const [open, setOpen] = useState<boolean>(false);
 

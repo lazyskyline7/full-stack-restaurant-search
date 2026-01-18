@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, PropsWithChildren } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Layout: FC = ({ children }) => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.container}>{children}</div>;
 };

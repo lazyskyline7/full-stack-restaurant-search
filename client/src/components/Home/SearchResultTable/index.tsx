@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -16,9 +16,10 @@ import { getFavorites } from '../../../store/favorites/actions';
 import { Favorite } from '../../../store/favorites/types';
 import AddToFavoriteBtn from './AddToFavoriteBtn';
 import { resetRestaurants } from '../../../store/restaurants/actions';
+import { useAppDispatch } from '../../../store/hooks';
 
 const SearchResultTable: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { restaurants, user, favorites } = useSelector<
     State,
     { restaurants: Restaurant[]; user: User; favorites: Favorite[] }

@@ -4,12 +4,9 @@
   "main": "index.js",
   "author": "Lance Hsu <lancehsu12@gmail.com>",
   "engines": {
-    "node": "16"
+    "node": ">=20"
   },
   "license": "MIT",
-  "resolutions": {
-    "@types/serve-static": "1.13.9"
-  },
   "dependencies": {
     "@fast-csv/parse": "^4.3.6",
     "body-parser": "^1.19.0",
@@ -18,14 +15,14 @@
     "dotenv": "^10.0.0",
     "express": "^4.20.0",
     "http-errors": "^1.8.0",
-    "mongoose": "^6.11.3",
+    "mongoose": "^6.13.6",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",
-    "passport-jwt": "^4.0.0",
+    "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
     "path": "^0.12.7",
-    "typescript": "^4.4.3"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "develop": "ts-node-dev --respawn --transpile-only index.ts",
@@ -35,11 +32,12 @@
     "build": "npx tsc && yarn client-build"
   },
   "devDependencies": {
+    "@types/node": "^18.19.0",
     "@types/passport-local": "^1.0.34",
-    "eslint": "^7.4.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5",
-    "ts-node-dev": "^1.1.8"
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.0",
+    "prettier": "^3.2.0",
+    "ts-node-dev": "^2.0.0"
   }
 }

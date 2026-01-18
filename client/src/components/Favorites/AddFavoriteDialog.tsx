@@ -5,17 +5,18 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { DialogTitle } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { State } from '../../store/rootReducer';
 import { closeDialog, openDialog } from '../../store/dialog/actions';
 import { AddCircleOutline } from '@material-ui/icons';
 import { postFavorite } from '../../store/favorites/actions';
 import { showMessage } from '../../store/message/actions';
+import { useAppDispatch } from '../../store/hooks';
 
 const AddFavoriteDialog: FC = () => {
   const isOpen = useSelector<State, boolean>((state) => state.dialogIsOpen);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [favoriteName, setFavoriteName] = useState<string>('');
 
   return (

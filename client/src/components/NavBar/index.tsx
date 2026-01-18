@@ -2,16 +2,17 @@ import React, { memo, FC } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AppBar, Toolbar, IconButton, Typography, ButtonBase, Tooltip } from '@material-ui/core';
 import { Brightness2, BrightnessHigh } from '@material-ui/icons';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { State } from '../../store/rootReducer';
 import { changeDarkMode } from '../../store/darkMode/actions';
 import LoginDialog from './LoginDialog';
 import { User } from '../../store/user/types';
 import UserAvatar from './UserAvatar';
+import { useAppDispatch } from '../../store/hooks';
 
 const NavBar: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { darkMode, user } = useSelector<State, { darkMode: boolean; user: User }>((state) => ({
     darkMode: state.darkMode,
     user: state.user,

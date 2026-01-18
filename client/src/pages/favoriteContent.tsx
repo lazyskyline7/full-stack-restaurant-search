@@ -3,9 +3,9 @@ import { Button, Typography } from '@material-ui/core';
 import FavoriteRestaurantsContainer from '../components/FavortieContent/FavoriteRestaurantsContainer';
 import { AddCircleOutline, EditOutlined } from '@material-ui/icons';
 import { createStyles, makeStyles, Theme } from '@material-ui/core';
-import { useDispatch } from 'react-redux';
 import { showMessage } from '../store/message/actions';
 import { useHistory, useParams } from 'react-router';
+import { useAppDispatch } from '../store/hooks';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const FavoriteContent: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const history = useHistory();
   const { content } = useParams<{ content: string }>();
   const classes = useStyles();

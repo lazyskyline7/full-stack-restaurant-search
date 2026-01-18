@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, FC } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { useMediaQuery } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './styles/global.css';
 import Home from './pages/index';
@@ -15,10 +15,11 @@ import Layout from './components/Layout';
 import { State } from './store/rootReducer';
 import { changeDarkMode } from './store/darkMode/actions';
 import MessageDialog from './components/MessageDialog';
+import { useAppDispatch } from './store/hooks';
 
 const App: FC = () => {
   const darkMode = useSelector<State, boolean>((state) => state.darkMode);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const theme = useMemo(() => createMuiTheme(getMuiThemeObj(darkMode)), [darkMode]);

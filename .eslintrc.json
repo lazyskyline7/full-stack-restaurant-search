@@ -3,7 +3,7 @@
     "es6": true,
     "node": true
   },
-  "excludedFiles": ["./build", "./client"],
+  "ignorePatterns": ["build", "client"],
   "extends": ["eslint:recommended", "prettier"],
   "globals": {
     "Atomics": "readonly",

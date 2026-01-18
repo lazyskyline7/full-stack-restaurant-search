@@ -5,14 +5,15 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import { Typography } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { State } from '../store/rootReducer';
 import { Message } from '../store/message/types';
 import { closeMessage } from '../store/message/actions';
+import { useAppDispatch } from '../store/hooks';
 
 const MessageDialog: FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const message = useSelector<State, Message>((state) => state.message);
 
   return (

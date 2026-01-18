@@ -1,11 +1,12 @@
 import React, { FC, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Redirect } from 'react-router';
 
 import { getFavorites, putFavorite } from '../../store/favorites/actions';
 import { Favorite } from '../../store/favorites/types';
 import { State } from '../../store/rootReducer';
 import RestaurantCard from './RestaurantCard';
+import { useAppDispatch } from '../../store/hooks';
 
 interface FavoriteRestaurantsContainerProps {
   editMode: boolean;
@@ -15,7 +16,7 @@ const FavoriteRestaurantsContainer: FC<FavoriteRestaurantsContainerProps> = ({
   editMode,
   favoriteName,
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const favorite = useSelector<State, Favorite | null>(
     (state) => state.favorites.find((e) => e.name === favoriteName) ?? null
   );

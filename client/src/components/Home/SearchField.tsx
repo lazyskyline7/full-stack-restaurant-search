@@ -2,10 +2,10 @@ import React, { FC, useRef, useState, useEffect, memo, useMemo, useCallback } fr
 import { Search } from '@material-ui/icons';
 import { makeStyles, createStyles, Theme, fade, InputBase, Button } from '@material-ui/core';
 import { getRestaurants, TimeObject } from '../../store/restaurants/actions';
-import { useDispatch } from 'react-redux';
 import { DateOptions, Dates } from '../../util/dateOperations';
 import DateButtonGroup from './DateButtonGroup';
 import TimeInput from './TimeInput';
+import { useAppDispatch } from '../../store/hooks';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const SearchField: FC = () => {
   const classes = useStyles();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const [searchName, setSearchName] = useState<string>('');
   const date = new Date().getDay().toString();
   const initSearchDateOption = useRef<DateOptions>({
