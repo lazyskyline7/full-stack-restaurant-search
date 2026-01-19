@@ -2,9 +2,9 @@
   "name": "full-stack-restaurant-search",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Lance Hsu <lancehsu12@gmail.com>",
+  "author": "Lance Hsu <lazy.skyline7@gmail.com>",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "license": "MIT",
   "dependencies": {
