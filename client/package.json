@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "/",
-  "proxy": "http://localhost:8000",
   "resolutions": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
@@ -27,7 +26,6 @@
     "react-redux": "^8.1.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "5.1.0-next.26",
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.8",
     "redux-persist": "^6.0.0",
@@ -35,10 +33,10 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "rm -rf ../build/frontend && react-scripts build && cp -r build ../build/frontend",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +56,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-react": "^4.2.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -67,6 +66,9 @@
     "eslint-plugin-prettier": "^5.1.0",
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.2.0"
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0"
   }
 }

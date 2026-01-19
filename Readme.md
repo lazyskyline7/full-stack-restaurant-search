@@ -1,23 +1,36 @@
 # Restaurant search web app example
 
+
 ## To Use
 
-### Build Front-end and run server
+### Requirements
 
-> `PORT: 8000`
-#### Config setting
-1. Copy `.env.example` and rename it to `.env`
-2. Add `SECRET_KEY` for JWT token and `MONGO_URL`
-3. Set `INITIALIZE_DB` to `true` for initialization (Then set it to `false` or it will initialize db every time you run server)
+- Node.js v22 or higher
+- MongoDB instance (local or remote)
 
-#### Build front-end and run server
+### Configuration
+1. Copy `.env.example` to `.env` in the project root.
+2. Set `SECRET_KEY` (JWT secret) and `MONGO_URL` (MongoDB connection string) in `.env`.
+3. Set `INITIALIZE_DB=true` for the first run to seed the database from `hours.csv`. **After initialization, set it back to `false` to avoid reseeding on every start.**
+
+### Build and Run (Development)
 
 ```zsh
 yarn install
 yarn local-start
 ```
-#### Go http://localhost:8000/
 
-## Demo
+This will build the frontend and start the backend server on [http://localhost:8000/](http://localhost:8000/).
 
-[Full Stack Restaurant Search](https://full-stack-restaurant-search.herokuapp.com/)
+### Production Build
+
+```zsh
+yarn build
+yarn start
+```
+
+The server will serve the production frontend from `/build/frontend`.
+
+## Demo (Deprecated)
+
+~~[Full Stack Restaurant Search](https://full-stack-restaurant-search.herokuapp.com/)~~
